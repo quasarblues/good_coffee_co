@@ -27,16 +27,7 @@ function writeText() {
             writeText();
         }
         h1El.style.opacity = 1; // Set opacity back to 1 after text change
-    }, 300);
+    }, 150);
 }
-
-// function writeText() {
-//     h1El.innerText = text.slice(0, idx);
-//     idx++;
-
-//     if (idx <= text.length) {
-//         setTimeout(writeText, 250);
-//     }
-// }
 
 writeText();
