@@ -1,0 +1,1 @@
+This is a demo website for a cafe in Seoul, South Korea
