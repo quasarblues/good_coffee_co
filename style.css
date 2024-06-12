@@ -261,6 +261,7 @@ hr {
 
 .img-container:hover {
     transform: scale(102%);
+    cursor: pointer;
 }
 
 .img-container::before {
