@@ -42,3 +42,27 @@ function writeText() {
 }
 
 writeText();
+
+// Enlarge Images when clicked
+
+const imageModal = document.querySelector('#imageModal');
+const galleryImgs = document.querySelectorAll('.gallery-img');
+const modalImage = document.querySelector('.modal-image');
+const closeBtn = document.querySelector('.close');
+const arrowContainers = document.querySelectorAll('.arrow-container');
+const arrows = document.querySelectorAll('.arrow');
+
+
+galleryImgs.forEach(galleryImg => {
+    galleryImg.addEventListener('click', () => {
+        imageModal.style.display = "flex";
+        modalImage.src = galleryImg.src;
+        modalImage.alt = galleryImg.alt;
+    })
+});
+
+closeBtn.addEventListener('click', () => {
+    imageModal.style.display = "none";
+    modalImage.src = "data:,";
+    modalImage.alt = "Image will load here";
+})

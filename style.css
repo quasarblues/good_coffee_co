@@ -266,7 +266,7 @@ hr {
     cursor: pointer;
 }
 
-.img-container::before {
+/* .img-container::before {
     content: '';
     width: 100%;
     height: 100%;
@@ -282,7 +282,7 @@ hr {
 
 .img-container:hover::before {
     opacity: 1;
-}
+} */
 
 .gallery-img {
     height: 100%;
@@ -290,6 +290,91 @@ hr {
     border-radius: 5px;
     object-fit: cover;
 }
+
+/* Englarged gallery images styling */
+#imageModal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 11;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+.modal-image {
+    max-height: 95vh;
+    max-width: 95vw;
+}
+
+.arrow-container {
+    width: 50px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+.arrow-container.left {
+    left: 0;
+}
+
+.arrow-container.right {
+    right: 0;
+}
+
+.arrow-container:hover,
+.arrow-container:focus {
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+    border-left: 2px solid #f1f1f1;
+    border-bottom: 2px solid #f1f1f1;
+    position: absolute;
+}
+
+.arrow.right {
+    right: 20px;
+    transform: rotate(225deg);
+}
+
+.arrow.left {
+    left: 20px;
+    transform: rotate(45deg);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    cursor: pointer;
+}
+
+
+
 
 /* On smaller screen sizes */
 @media (max-width: 768px) {
@@ -334,6 +419,7 @@ hr {
     .right-side img {
         max-width: 100%;
         border-radius: 5px;
+        object-fit: cover;
     }
 
     #menu {
@@ -394,6 +480,7 @@ hr {
         transform: rotate(45deg) translate(4px, 10px);
     }
 }
+
 
 @keyframes fadeBar2 {
     from {
