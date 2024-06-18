@@ -335,16 +335,22 @@ hr {
 
 .arrow-container:hover,
 .arrow-container:focus {
-    background-color: rgba(0, 0, 0, 0.7);
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.arrow.hovered {
+    border-left-color: #f1f1f1;
+    border-bottom-color: #f1f1f1;
 }
 
 .arrow {
     width: 40px;
     height: 40px;
-    border-left: 2px solid #f1f1f1;
-    border-bottom: 2px solid #f1f1f1;
+    border-left: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
     position: absolute;
+    transition: 0.3s;
 }
 
 .arrow.right {
@@ -361,7 +367,10 @@ hr {
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #f1f1f1;
+    color: #bbb;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0 10px;
+    border-radius: 50%;
     font-weight: bold;
     font-size: 2rem;
     transition: 0.3s;
@@ -369,7 +378,8 @@ hr {
 
 .close:hover,
 .close:focus {
-    color: #bbb;
+    color: #f1f1f1;
+    background-color: rgba(0, 0, 0, 0.7);
     cursor: pointer;
 }
 

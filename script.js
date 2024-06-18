@@ -43,26 +43,77 @@ function writeText() {
 
 writeText();
 
-// Enlarge Images when clicked
-
 const imageModal = document.querySelector('#imageModal');
 const galleryImgs = document.querySelectorAll('.gallery-img');
 const modalImage = document.querySelector('.modal-image');
 const closeBtn = document.querySelector('.close');
 const arrowContainers = document.querySelectorAll('.arrow-container');
 const arrows = document.querySelectorAll('.arrow');
+const rightArrow = document.querySelector('.arrow-container.right');
+const leftArrow = document.querySelector('.arrow-container.left');
 
+let currentIdx = 0;
 
-galleryImgs.forEach(galleryImg => {
+// Enlarge Images when clicked
+// galleryImgs.forEach(galleryImg => {
+//     galleryImg.addEventListener('click', () => {
+//         imageModal.style.display = "flex";
+//         modalImage.src = galleryImg.src;
+//         modalImage.alt = galleryImg.alt;
+//     })
+// });
+
+galleryImgs.forEach((galleryImg, idx) => {
     galleryImg.addEventListener('click', () => {
-        imageModal.style.display = "flex";
+        currentIdx = idx;
+        imageModal.style.display = "flex"
         modalImage.src = galleryImg.src;
         modalImage.alt = galleryImg.alt;
     })
 });
 
+rightArrow.addEventListener('click', () => {
+    currentIdx++;
+    if (currentIdx > galleryImgs.length - 1) {
+        currentIdx = 0;
+    }
+    modalImage.src = galleryImgs[currentIdx].src;
+    modalImage.alt = galleryImgs[currentIdx].alt;
+})
+
+leftArrow.addEventListener('click', () => {
+    currentIdx--;
+    if (currentIdx < 0) {
+        currentIdx = galleryImgs.length - 1;
+    }
+    modalImage.src = galleryImgs[currentIdx].src;
+    modalImage.alt = galleryImgs[currentIdx].alt;
+})
+
+// Close image modal
 closeBtn.addEventListener('click', () => {
     imageModal.style.display = "none";
     modalImage.src = "data:,";
     modalImage.alt = "Image will load here";
 })
+
+
+// Change arrow color upon mouse enter and mouse leave
+arrowContainers.forEach(arrowContainer => {
+    arrowContainer.addEventListener('mouseenter', () => {
+        arrows.forEach(arrow => {
+            arrow.classList.add('hovered');
+        });
+    })
+});
+
+arrowContainers.forEach(arrowContainer => {
+    arrowContainer.addEventListener('mouseleave', () => {
+        arrows.forEach(arrow => {
+            arrow.classList.remove('hovered');
+        });
+    })
+});
+
+
+
