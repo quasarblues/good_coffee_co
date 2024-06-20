@@ -96,24 +96,3 @@ closeBtn.addEventListener('click', () => {
     modalImage.src = "data:,";
     modalImage.alt = "Image will load here";
 })
-
-
-// Change arrow color upon mouse enter and mouse leave
-arrowContainers.forEach(arrowContainer => {
-    arrowContainer.addEventListener('mouseenter', () => {
-        arrows.forEach(arrow => {
-            arrow.classList.add('hovered');
-        });
-    })
-});
-
-arrowContainers.forEach(arrowContainer => {
-    arrowContainer.addEventListener('mouseleave', () => {
-        arrows.forEach(arrow => {
-            arrow.classList.remove('hovered');
-        });
-    })
-});
-
-
-

@@ -49,6 +49,11 @@ body {
     border-bottom: 2px solid var(--beige);
 }
 
+.nav a:focus,
+.nav a:active {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .nav ul {
     display: flex;
     list-style: none;
@@ -96,6 +101,11 @@ body {
 
 .hamburger:hover {
     cursor: pointer;
+}
+
+.hamburger:focus,
+.hamburger:active {
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Hero Styles */
@@ -340,10 +350,20 @@ hr {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.arrow.hovered {
+.arrow-container:active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.arrow-container:hover .arrow {
     border-left-color: #f1f1f1;
     border-bottom-color: #f1f1f1;
 }
+
+.arrow-container:active .arrow {
+    border-left-color: #bbb;
+    border-bottom-color: #bbb;
+}
+
 
 .arrow {
     width: 40px;
@@ -403,7 +423,7 @@ hr {
     }
 
     section {
-        padding: 1.3rem;
+        padding: 1rem;
     }
 
     #about>div:first-of-type {
@@ -432,10 +452,11 @@ hr {
     }
 
     #menu {
-        padding: 0 1rem;
+        padding: 0 2rem;
     }
 
     #menu>div:first-of-type {
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
