@@ -265,7 +265,7 @@ hr {
 .img-container {
     margin: 1rem;
     width: 400px;
-    height: 400px;
+    height: auto;
     flex: 1 1 auto;
     position: relative;
     transition: transform 0.3s ease;
@@ -352,6 +352,7 @@ hr {
 
 .arrow-container:active {
     background-color: rgba(0, 0, 0, 0.1);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .arrow-container:hover .arrow {
@@ -404,8 +405,15 @@ hr {
     cursor: pointer;
 }
 
+/* Media query for large screens */
+@media (min-width: 1200px) {
+    .img-container {
+        max-width: 33.33%
+    }
+}
 
-/* On smaller screen sizes */
+
+/* Media query for small screens */
 @media (max-width: 768px) {
     :root {
         --section-margin: 1rem;
